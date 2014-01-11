@@ -1,0 +1,8 @@
+language: c
+script: "cd test && bash test.sh"
+branches:
+  only:
+    - master
+notifications:
+  email:
+    - andrew@andrewschaaf.com

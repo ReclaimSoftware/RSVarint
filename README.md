@@ -1,5 +1,7 @@
 **Variable-length integer codecs**
 
+[![Build Status](https://secure.travis-ci.org/ReclaimSoftware/RSVarint.png)](http://travis-ci.org/ReclaimSoftware/RSVarint)
+
 All the writing functions increment the offset by the size of the encoded varint.
 
 ### [Base 128 Varints](https://developers.google.com/protocol-buffers/docs/encoding#varints)
