@@ -3,6 +3,7 @@ cd .. &&
     cd test && \
     gcc \
         -std=c99 \
+        -Wall \
         -o ../build/runtests \
         -isystem ../ \
         ../build/RSVarint.o \
