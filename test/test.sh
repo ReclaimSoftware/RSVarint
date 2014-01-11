@@ -1,7 +1,7 @@
 cd .. &&
     bash build.sh && \
     cd test && \
-    gcc \
+    $CC \
         -std=c99 \
         -Wall \
         -o ../build/runtests \
