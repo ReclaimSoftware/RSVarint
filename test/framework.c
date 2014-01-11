@@ -36,21 +36,16 @@ void pass_test() {
 
 void start_suite() {
     fprintf(stderr, "Running tests...\n");
-
-    struct timezone tz;
-    gettimeofday(&t0, &tz);
+    gettimeofday(&t0, NULL);
 }
 
 
 void pass_suite() {
-
-    struct timezone tz;
-    gettimeofday(&t1, &tz);
+    gettimeofday(&t1, NULL);
     int64_t microseconds = (
         ((t1.tv_sec - t0.tv_sec) * 1000000) +
         (t1.tv_usec - t0.tv_usec)
     );
-
     fprintf(stderr, "All %lld tests passed in %lld microseconds.\n",
                         (long long)framework_g_num_tests,
                         (long long)microseconds);
