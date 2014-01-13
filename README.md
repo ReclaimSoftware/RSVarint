@@ -18,6 +18,7 @@ int32_t RSVarintSignedRead(uint8_t *data, uint32_t *offset);
 int64_t RSVarintSignedRead64(uint8_t *data, uint32_t *offset);
 
 int RSVarintFread64(FILE *file, uint64_t *value);
+int RSVarintSignedFread64(FILE *file, int64_t *value);
 ```
 
 ### [License: MIT](LICENSE.txt)

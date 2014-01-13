@@ -17,5 +17,6 @@ cd .. &&
         test-RSVarintSignedRead.c \
         test-RSVarintSignedRead64.c \
         test-RSVarintFread64.c \
+        test-RSVarintSignedFread64.c \
         runtests.c &&
     ../build/runtests

@@ -25,6 +25,16 @@ int64_t RSVarintSignedRead64(uint8_t *data, uint32_t *offset) {
 }
 
 
+int RSVarintSignedFread64(FILE *file, int64_t *value) {
+    uint64_t n;
+    if (!RSVarintFread64(file, &n)) {
+        return 0;
+    }
+    *value = (n >> 1) ^ -(n & 1);
+    return 1;
+}
+
+
 void RSVarintWrite(uint32_t n, uint8_t *data, uint32_t *offset) {
   int i = *offset;
   data[i] = 0;
