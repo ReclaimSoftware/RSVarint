@@ -17,4 +17,6 @@ int64_t RSVarintSignedRead64(uint8_t *data, uint32_t *offset);
 int RSVarintFread64(FILE *file, uint64_t *value);
 int RSVarintSignedFread64(FILE *file, int64_t *value);
 
+uint64_t RSVarintBitcoinRead64(uint8_t *data, uint32_t *offset);
+
 #endif

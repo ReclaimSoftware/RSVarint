@@ -126,3 +126,25 @@ int RSVarintFread64(FILE *file, uint64_t *value) {
         shift += 7;
     }
 }
+
+
+uint64_t RSVarintBitcoinRead64(uint8_t *data, uint32_t *offset) {
+    uint32_t i = *offset;
+    uint8_t firstByte = data[i];
+    if (firstByte <= 0xFC) {
+        *offset = i + 1;
+        return firstByte;
+    } else if (firstByte == 0xFD) {
+        *offset = i + (1 + 2);
+        uint16_t *values = (uint16_t *)(&(data[i + 1]));
+        return values[0];
+    } else if (firstByte == 0xFE) {
+        *offset = i + (1 + 4);
+        uint32_t *values = (uint32_t *)(&(data[i + 1]));
+        return values[0];
+    } else {
+        *offset = i + (1 + 8);
+        uint64_t *values = (uint64_t *)(&(data[i + 1]));
+        return values[0];
+    }
+}

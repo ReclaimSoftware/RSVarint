@@ -21,4 +21,12 @@ int RSVarintFread64(FILE *file, uint64_t *value);
 int RSVarintSignedFread64(FILE *file, int64_t *value);
 ```
 
+
+### [Bitcoin Varints](https://en.bitcoin.it/wiki/Protocol_specification#Variable_length_integer)
+
+```c
+uint64_t RSVarintBitcoinRead64(uint8_t *data, uint32_t *offset);
+```
+
+
 ### [License: MIT](LICENSE.txt)
