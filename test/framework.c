@@ -29,7 +29,7 @@ void assert_uints_equal(uint64_t x, uint64_t y) {
 }
 
 
-void pass_test() {
+void start_test() {
     framework_g_num_tests++;
 }
 
