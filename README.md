@@ -4,7 +4,7 @@
 
 All the writing functions increment the offset by the size of the encoded varint.
 
-### [Base 128 Varints](https://developers.google.com/protocol-buffers/docs/encoding#varints)
+### [Base 128 Varints (Little-Endian)](https://developers.google.com/protocol-buffers/docs/encoding#varints)
 
 ```c
 void RSVarintWrite(uint32_t n, uint8_t *data, uint32_t *offset);
