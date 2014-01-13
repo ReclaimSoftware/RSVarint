@@ -9,6 +9,7 @@ void test_RSVarintRead();
 void test_RSVarintRead64();
 void test_RSVarintSignedRead();
 void test_RSVarintSignedRead64();
+void test_RSVarintFread64();
 
 
 int main() {
@@ -21,6 +22,7 @@ int main() {
     test_RSVarintRead64();
     test_RSVarintSignedRead();
     test_RSVarintSignedRead64();
+    test_RSVarintFread64();
     pass_suite();
     return 0;
 }

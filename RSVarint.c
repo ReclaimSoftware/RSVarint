@@ -87,3 +87,32 @@ uint64_t RSVarintRead64(uint8_t *data, uint32_t *offsetPtr) {
         shift += 7;
     }
 }
+
+
+int RSVarintFread64(FILE *file, uint64_t *value) {
+    if (!file) {
+        return 0;
+    }
+    int c;
+    uint64_t result = 0;
+    int shift = 0;
+    while (1) {
+        c = fgetc(file);
+        if (c == EOF) {
+            return 0;
+        }
+        if ((shift == (9 * 7)) && (c > 0x01)) {
+            // This varint is too large (>= 2**64)
+            return 0;
+        }
+
+        result += (((uint64_t)c & 0x7F) << shift);
+        if (c < 128) {
+            if (value) {
+                *value = result;
+            }
+            return 1;
+        }
+        shift += 7;
+    }
+}
