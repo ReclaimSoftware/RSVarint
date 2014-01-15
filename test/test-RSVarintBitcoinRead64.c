@@ -1,8 +1,8 @@
 #include <RSVarint.h>
-#include <string.h>
-#include "framework.h"
+#include <RSTest.h>
 
 void test_RSVarintBitcoinRead64() {
+    DESCRIBE("RSVarintBitcoinRead64");
 
     IT("reads 0") {
         uint8_t data[2] = {0xEE, 0x00};

@@ -1,3 +1,6 @@
+export RSTEST="../upstream/RSTest"
+export RSTEST_ARGS="-isystem $RSTEST/ $RSTEST/RSTest.c"
+
 cd .. &&
     bash build.sh && \
     cd test && \
@@ -5,9 +8,9 @@ cd .. &&
         -std=c99 \
         -Wall \
         -o ../build/runtests \
+        $RSTEST_ARGS \
         -isystem ../ \
         ../build/RSVarint.o \
-        framework.c \
         test-RSVarintWrite.c \
         test-RSVarintWrite64.c \
         test-RSVarintSignedWrite.c \

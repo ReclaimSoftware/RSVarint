@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "framework.h"
+#include <RSTest.h>
 
 void test_RSVarintWrite();
 void test_RSVarintWrite64();
@@ -27,6 +27,6 @@ int main() {
     test_RSVarintFread64();
     test_RSVarintSignedFread64();
     test_RSVarintBitcoinRead64();
-    pass_suite();
+    end_suite();
     return 0;
 }

@@ -1,0 +1,3 @@
+[submodule "upstream/RSTest"]
+	path = upstream/RSTest
+	url = https://github.com/ReclaimSoftware/RSTest.git
